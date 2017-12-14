@@ -3,11 +3,11 @@
 # How to configure LBR (Last Branch Record) by yourself
 
 ## Overview of LBR
-- The processor records the source (from_ip) and the destination (to_ip) of when a branch-related instruction is executed.
+- The processor records the source (from_ip) and the destination (to_ip) when a branch-related instruction is executed.
 - Branch-related instructions include not only 'jmp' but also function calls and 'ret'.
 - The overhead is (almost) zero because the addesses are recoreded by hardware into model specific registers.
 - "Branch traces" used in debuggers like gdb, on the other hand, incurs an iterruption to software every time a branch is executed and the overhead is huge (a brief experiment on a numeric application showed 250X slowdown).
-- A drawback is that the number of records is limited due since they are stored in model specific registers. Skylake (and newer) CPUs can store 32 records and Broadwell (and older) ones can store 16.
+- A drawback is that the number of records is limited since they are stored in model specific registers. Skylake (and newer) CPUs can store 32 records and Broadwell (and older) ones can store 16.
 
 ## How to use the sample
 - Prepare a random workload that issues many 'jmp's
