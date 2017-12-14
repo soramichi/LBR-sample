@@ -36,4 +36,6 @@ $ ./lastbranch_from_ip.sh
 - gdbの中にLBRを使う機能はない。これはブレイクポイントや例外発生時にLBRの更新を止めるという機能がCPUにないため。つまり例外発生時にgdbからLBRを見るとプログラムからgdbに遷移するbranchなどで埋まってしまう。
 - したがってSIGFPEなどの任意の例外が発生した時にLBRの更新を止めるには、OSの例外ハンドラの頭にLBRをストップさせるコード（レジスタへの書き込み）を追加する必要がある。
 
-	
+## 参考情報
+- https://lwn.net/Articles/680985/
+- https://lwn.net/Articles/680996/ 
