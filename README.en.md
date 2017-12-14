@@ -1,4 +1,4 @@
-[日本語](https://github.com/soramichi/LBR-sample/blob/master/README.md)
+[[日本語]](https://github.com/soramichi/LBR-sample/blob/master/README.md)
 
 # How to configure LBR (Last Branch Record) by yourself
 
@@ -22,7 +22,7 @@ main(){
 ```
 - Execute it on a specific core (e.g. core 1)
 ```
-$ taskset -c 1 ./a.out
+$ taskset -c 1 ./a.out &
 ```
 - Execute the sample (that reads and displays 'from_ip's of core 1)
 ```
@@ -33,7 +33,7 @@ $ ./lastbranch_from_ip.sh
 ...
 ```
 - Extract the memory address on which the execution code of a.out is placed (from /proc/{PID}/maps).
-Adding it the offset of the jmp instruction on the program code will give you the same address shown above.
+Adding it the offset of the jmp instruction inside the program code will give you the same address as shown above.
 
 ## Things to improve
 - There is no gdb integration of LBR. This is because a CPU does not support freezing the LBR when an exception occurs or when a break point is hit.

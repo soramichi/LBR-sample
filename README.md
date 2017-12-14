@@ -1,4 +1,4 @@
-[English](https://github.com/soramichi/LBR-sample/blob/master/README.en.md)
+[[English]](https://github.com/soramichi/LBR-sample/blob/master/README.en.md)
 
 # LBR (Last Branch Record) を使うサンプル
 
@@ -22,7 +22,7 @@ main(){
 ```
 - 特定のコア（例えばコア1）にpinして実行
 ```
-$ taskset -c 1 ./a.out
+$ taskset -c 1 ./a.out &
 ```
 - サンプルを実行（コア1の from_ip を読んで表示）
 ```
