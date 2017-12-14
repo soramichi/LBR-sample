@@ -18,6 +18,9 @@ sudo wrmsr -a 0x{$MSR_IA32_DEBUGCTL} 0x1
 # do not capture branches in ring 0
 sudo wrmsr -a 0x{$MSR_LBR_SELECT} 0x1
 
+# wait a bit for the workload to issue enough branches
+sleep 0.1
+
 # read all LBR records
 for i in `seq 1 ${N_LBR}`; do
     sudo rdmsr -p ${CORE} 0x${ADDR}
