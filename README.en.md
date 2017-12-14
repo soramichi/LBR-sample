@@ -37,7 +37,7 @@ Adding it the offset of the jmp instruction inside the program code will give yo
 
 ## Things to improve
 - There is no gdb integration of LBR. This is because a CPU does not support freezing the LBR when an exception occurs or when a break point is hit.
-This means that you will see many branches that are on the way from a workload to gdbs if you read LBRs from gdb when the workload stops at an exeception.
+This means that you will see many branches that are on the way from your workload to gdb if you read LBRs from gdb when the workload stops at an exeception.
 - Therefore, if you want to freeze LBR when an arbitrary type of exeception (like SIGSEGV, SIGFPE) occurs, you may need to add a code to stop the LBR recording into the head of exception handlers in the OS.
 
 ## References (on how LBR is useful)
