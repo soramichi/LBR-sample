@@ -1,3 +1,5 @@
+[English](https://github.com/soramichi/LBR-sample/blob/master/README.en.md)
+
 # LBR (Last Branch Record) を使うサンプル
 
 ## LBR の概要
