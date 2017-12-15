@@ -35,6 +35,10 @@ $ ./lastbranch_from_ip.sh
 - Extract the memory address on which the execution code of a.out is placed (from /proc/{PID}/maps).
 Adding it the offset of the jmp instruction inside the program code will give you the same address as shown above.
 
+## Notes
+- LBR is cleared when the C-state becomes 2 or deeper, and there is no configuration to prevent it. Therefore, if you want to read LBRs after the target program finishes, the C-state must be configured so that it never goes 2 or deeper. In concrete, you can add `intel_idle.max_cstate=1 intel_pstate=disable` into `GRUB_CMDLINE_LINUX` of `/etc/default/grub` and then do `sudo update-grub`.
+
+
 ## Things to improve
 - There is no gdb integration of LBR. This is because a CPU does not support freezing the LBR when an exception occurs or when a break point is hit.
 This means that you will see many branches that are on the way from your workload to gdb if you read LBRs from gdb when the workload stops at an exeception.
