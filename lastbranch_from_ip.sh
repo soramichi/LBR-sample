@@ -12,6 +12,9 @@ ADDR=$MSR_LASTBRANCH_0_FROM_IP
 CORE=1   # Run the target workload on core 1 (taskset -c 1 workload)
 N_LBR=32 # Number of LBR records (32 in skylake, 16 in broadwell or haswell)
 
+# enable MSR kernel module
+sudo modprobe msr
+
 # enable LBR
 sudo wrmsr -a 0x${MSR_IA32_DEBUGCTL} 0x1
 
