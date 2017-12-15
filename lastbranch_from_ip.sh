@@ -13,10 +13,10 @@ CORE=1   # Run the target workload on core 1 (taskset -c 1 workload)
 N_LBR=32 # Number of LBR records (32 in skylake, 16 in broadwell or haswell)
 
 # enable LBR
-sudo wrmsr -a 0x{$MSR_IA32_DEBUGCTL} 0x1
+sudo wrmsr -a 0x${MSR_IA32_DEBUGCTL} 0x1
 
 # do not capture branches in ring 0
-sudo wrmsr -a 0x{$MSR_LBR_SELECT} 0x1
+sudo wrmsr -a 0x${MSR_LBR_SELECT} 0x1
 
 # wait a bit for the workload to issue enough branches
 sleep 0.1
