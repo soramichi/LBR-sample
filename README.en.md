@@ -2,6 +2,8 @@
 
 # How to configure LBR (Last Branch Record) by yourself
 
+For more proper explanations, see here: http://sorami-chi.hateblo.jp/entry/2017/12/17/230000
+
 ## Overview of LBR
 - The processor records the source (from_ip) and the destination (to_ip) when a branch-related instruction is executed.
 - Branch-related instructions include not only 'jmp' but also function calls and 'ret'.
